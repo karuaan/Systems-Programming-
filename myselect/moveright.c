@@ -1,0 +1,15 @@
+
+#include "myselect.h"
+
+/*pre: none
+*post: moves the cursor right one column
+*	moves the cursor to the last element if there is no column to the right
+*/
+
+void moveright()
+{
+	refreshout(gl_env.pos);
+	if((gl_env.pos += gl_env.win.ws_row) >= gl_env.nbelems)
+		gl_env.pos = gl_env.nbelems - 1;
+	refreshin();
+}
